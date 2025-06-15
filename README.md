@@ -1,4 +1,4 @@
-# Nuxt Minimal Starter
+# F-ZERO: Maximum Velocity Vermilion Code Generator
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
