@@ -56,14 +56,14 @@ const playerName = ref('')
 
 const handleInput = (event) => {
   // Only allow alphabetic characters
-  const value = event.target.value.replace(/[^A-Za-z]/g, '')
+  const value = event.target.value.replace(/[^A-Za-z]/g, '').toUpperCase()
   playerName.value = value
 }
 
 // Compute Vermilion Code reactively
 const vermilionCode = computed(() => {
-  if (playerName.value && playerName.value.length > 0) {
-    return generate(playerName.value.toUpperCase())
+  if (playerName.value && 0 < playerName.value.length) {
+    return generate(playerName.value)
   }
   return ''
 })
