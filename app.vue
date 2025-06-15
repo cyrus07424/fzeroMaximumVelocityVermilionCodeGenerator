@@ -9,28 +9,36 @@
         </h1>
         
         <div class="space-y-6">
-          <div>
-            <UFormGroup label="Player Name" description="Enter alphabetic characters only">
-              <UInput
-                v-model="playerName"
-                placeholder="Enter player name..."
-                :maxlength="20"
-                @input="handleInput"
-                size="lg"
-              />
-            </UFormGroup>
-          </div>
-          
-          <div v-if="vermilionCode" class="bg-blue-50 border border-blue-200 rounded-lg p-6">
-            <h3 class="text-lg font-semibold text-blue-800 mb-2">Generated Vermilion Code:</h3>
-            <div class="font-mono text-2xl text-blue-900 bg-white rounded p-4 border">
-              {{ vermilionCode }}
+          <ClientOnly>
+            <div>
+              <UFormGroup label="Player Name" description="Enter alphabetic characters only">
+                <UInput
+                  v-model="playerName"
+                  placeholder="Enter player name..."
+                  :maxlength="20"
+                  @input="handleInput"
+                  size="lg"
+                />
+              </UFormGroup>
             </div>
-          </div>
-          
-          <div v-if="playerName && !vermilionCode" class="text-gray-500 text-center">
-            Enter a valid player name to generate Vermilion Code
-          </div>
+            
+            <div v-if="vermilionCode" class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+              <h3 class="text-lg font-semibold text-blue-800 mb-2">Generated Vermilion Code:</h3>
+              <div class="font-mono text-2xl text-blue-900 bg-white rounded p-4 border">
+                {{ vermilionCode }}
+              </div>
+            </div>
+            
+            <div v-if="playerName && !vermilionCode" class="text-gray-500 text-center">
+              Enter a valid player name to generate Vermilion Code
+            </div>
+            
+            <template #fallback>
+              <div class="text-center text-gray-500">
+                Loading form...
+              </div>
+            </template>
+          </ClientOnly>
         </div>
       </div>
     </div>
