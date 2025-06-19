@@ -66,4 +66,9 @@ const vermilionCode = computed(() => {
   }
   return ''
 })
+
+// Setup page meta
+useHead({
+  title: 'F-ZERO: Maximum Velocity Vermilion Code Generator'
+})
 </script>
